@@ -1,20 +1,17 @@
 import { createBrowserRouter, RouterProvider } from "react-router"
 import Login from "../pages/Login"
 import RedirectToHome from "../pages/RedirectToHome"
-import Register from "../pages/Register"
 import { Suspense } from "react"
-import Gusets from "../pages/Gusets"
 import Users from "../pages/Users"
 import useUserStore from "../stores/userStore"
+import GuestPage from "../pages/GuestPage"
 
 
 
 
 const guestRouter = createBrowserRouter([
-  // {path : "/" , Component : Register},
-  {path : "/", Component : Login },
+  {path : "/", Component : GuestPage },
   {path : "*" , Component : RedirectToHome},
-  {path : "/guests" , Component : Gusets }
 ])
 
 const userRouter = createBrowserRouter([
