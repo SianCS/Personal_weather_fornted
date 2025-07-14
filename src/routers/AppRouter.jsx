@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router"
 import Login from "../pages/Login"
 import RedirectToHome from "../pages/RedirectToHome"
 import { Suspense } from "react"
-import Users from "../pages/Users"
+import UserDashboard from "../pages/UserDashboard"
 import useUserStore from "../stores/userStore"
 import GuestPage from "../pages/GuestPage"
 
@@ -15,7 +15,7 @@ const guestRouter = createBrowserRouter([
 ])
 
 const userRouter = createBrowserRouter([
-  {path : "/" , Component : Users},
+  {path : "/" , Component : UserDashboard},
   {path : "*", Component : RedirectToHome},
 ])
 

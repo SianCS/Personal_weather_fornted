@@ -2,8 +2,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { registerSchema } from "../utils/validator";
 import { useEffect } from "react";
-import { authApi } from "../api/authApi";
 import { toast } from "react-toastify";
+import { registerUser } from "../api";
 
 function Register({ resetForm }) {
   const { handleSubmit, register, formState, reset } = useForm({
@@ -19,7 +19,7 @@ function Register({ resetForm }) {
   const onSubmit = async (data) => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500));
-      const resp = await authApi.post("/register", data);
+      const resp = await registerUser(data);
       // console.log("API Response Received:", resp);
       // console.log("Response Data:", resp.data);
       const successMsg = resp.data?.message || "Registration successful!";

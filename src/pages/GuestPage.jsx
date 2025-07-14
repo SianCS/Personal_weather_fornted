@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
 import LoadingUi from "../components/LoadingUi"; // ◀️ สมมติว่า path ถูกต้อง
 import ErrorUi from "../components/ErrorUi"; // ◀️ สมมติว่า path ถูกต้อง
-import { searchByCityName, searchByLagLon } from "../api/weatherApi"; // ◀️ สมมติว่า path ถูกต้อง
+// import { searchByCityName, searchByLagLon } from "../api/weatherApi"; // ◀️ สมมติว่า path ถูกต้อง
 import Login from "./Login";
 import { AddFavoriteIcon, LocationIcon, SearchIcon } from "../icons";
+import { searchByCityName, searchByLagLon } from "../api";
+// import { searchByCityName } from "../api";
 
 function GuestPage() {
   const [weather, setWeather] = useState(null);
@@ -71,7 +73,7 @@ function GuestPage() {
       <div className="min-h-screen w-full bg-black/10 backdrop-blur-sm ...">
         <div className="container mx-auto p-4 flex justify-center">
           <div className="w-full max-w-md flex flex-col gap-6">
-            <div className="flex justify-end w-250 ">
+            <div className="flex justify-end w-220 ">
               {/* Open the modal using document.getElementById('ID').showModal() method */}
               <button
                 className="btn btn-primary"
@@ -123,12 +125,15 @@ function GuestPage() {
                 <SearchIcon />
               </button>
             </form>
-            <button className="group transition" onClick={handleAuthRedirect}>
+            
+                <button className="group transition" onClick={handleAuthRedirect}>
               {" "}
               {/* 1. เพิ่ม group ที่นี่ */}
-              <AddFavoriteIcon className="w-10 absolute right-170 bottom-210 group-hover:fill-red-600 transition" />{" "}
+              <AddFavoriteIcon className="w-10 absolute right-120 bottom-182 group-hover:fill-red-600 transition " />{" "}
               {/* 2. เพิ่ม group-hover ที่นี่ */}
             </button>
+            
+            
             <div className="flex-grow flex items-center justify-center min-h-[20rem]">
               {loading && <LoadingUi />}
               {error && <ErrorUi message={error} />}
