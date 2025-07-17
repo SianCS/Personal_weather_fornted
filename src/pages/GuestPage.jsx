@@ -190,7 +190,7 @@ function GuestPage() {
                           โอกาสเกิดฝน
                         </p>
                         <p className="text-lg font-bold">
-                          {weather.chanceOfRain}%
+                         💧 {weather.chanceOfRain}%
                         </p>
                       </div>
                     )}
