@@ -1,5 +1,6 @@
 import { ToastContainer } from "react-toastify";
 import AppRouter from "./routers/AppRouter";
+import 'leaflet/dist/leaflet.css';
 
 function App() {
   return (
